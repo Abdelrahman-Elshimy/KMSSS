@@ -35,9 +35,25 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
+
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./src/assets/js/vendor/modernizr-3.6.0.min.js",
+              "./src/assets/js/vendor/jquery-3.6.0.min.js",
+              "./src/assets/js/vendor/jquery-migrate-3.3.0.min.js",
+              "./src/assets/js/vendor/bootstrap.bundle.min.js",
+              "./src/assets/js/plugins/waypoints.js",
+              "./src/assets/js/plugins/wow.js",
+              "./src/assets/js/plugins/magnific-popup.js",
+              "./src/assets/js/plugins/perfect-scrollbar.min.js",
+              "./src/assets/js/plugins/select2.min.js",
+              "./src/assets/js/plugins/isotope.js",
+              "./src/assets/js/plugins/scrollup.js",
+              "./src/assets/js/main.js?v=4.1"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,12 +110,29 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./src/assets/js/vendor/modernizr-3.6.0.min.js",
+              "./src/assets/js/vendor/jquery-3.6.0.min.js",
+              "./src/assets/js/vendor/jquery-migrate-3.3.0.min.js",
+              "./src/assets/js/vendor/bootstrap.bundle.min.js",
+              "./src/assets/js/plugins/waypoints.js",
+              "./src/assets/js/plugins/wow.js",
+              "./src/assets/js/plugins/magnific-popup.js",
+              "./src/assets/js/plugins/perfect-scrollbar.min.js",
+              "./src/assets/js/plugins/select2.min.js",
+              "./src/assets/js/plugins/isotope.js",
+              "./src/assets/js/plugins/scrollup.js"
+                        ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "2faf0695-a0b6-4635-ae62-ba8b7bb354a8"
   }
 }

@@ -1,0 +1,51 @@
+<section class="section-box mt-70"  *ngIf="listOfCategoriesAiTools.length > 0">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title mb-10 wow animate__animated animate__fadeInUp">Jobs of the day</h2>
+      <p class="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Search and connect with the right candidates faster.</p>
+      <div class="list-tabs mt-40">
+        <ul class="nav nav-tabs" role="tablist">
+          <li *ngFor="let category of listOfCategoriesAiTools; let i = index" class="nav-item">
+            <a [ngClass]="{'active': i === 0}" [id]="'nav-tab-job-' + (i + 1)" [href]="'#tab-job-' + (i + 1)" data-bs-toggle="tab" role="tab" [attr.aria-controls]="'tab-job-' + (i + 1)" [attr.aria-selected]="i === 0">
+              <img [src]="category.image" alt="Image">
+              {{ category.titleEn }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-50">
+      <div class="tab-content" id="myTabContent-1">
+        <div *ngFor="let category of listOfCategoriesAiTools; let i = index" class="tab-pane fade" [id]="'tab-job-' + (i + 1)" role="tabpanel" [attr.aria-labelledby]="'nav-tab-job-' + (i + 1)" [ngClass]="{'active show': i === 0}">
+          <div class="row">
+          <div *ngFor="let tool of category.AiTools" class="col-xl-3 col-lg-4 col-md-6">
+                <div class="card-grid-2 hover-up">
+                  <div class="card-grid-2-image-left">
+                    <div class="card-grid-2-image-rd online"><a>
+                        <figure><img alt="jobBox" [src]="tool.imageUrl"></figure></a></div>
+                    <div class="card-profile pt-10"><a>
+                        <h5>{{tool.titleAr}}</h5></a>
+                      <div class="rate-reviews-small pt-5"><span><img src="assets/imgs/template/icons/star.svg" alt="jobBox"></span><span><img src="assets/imgs/template/icons/star.svg" alt="jobBox"></span><span><img src="assets/imgs/template/icons/star.svg" alt="jobBox"></span><span><img src="assets/imgs/template/icons/star.svg" alt="jobBox"></span><span><img src="assets/imgs/template/icons/star.svg" alt="jobBox"></span><span class="ml-10 color-text-mutted font-xs">(65)</span></div>
+                    </div>
+                  </div>
+                  <div class="card-block-info">
+                    <p class="font-xs color-text-paragraph-2">{{ tool.bodyEn[0].children[0].text }}</p>
+                    <div class="card-2-bottom card-2-bottom-candidate mt-30">
+                      <div class="text-start"><a class="btn btn-tags-sm mb-10 mr-5" href="jobs-grid.html">Figma</a><a class="btn btn-tags-sm mb-10 mr-5" href="jobs-grid.html">Adobe XD</a><a class="btn btn-tags-sm mb-10 mr-5" href="jobs-grid.html">PSD</a><a class="btn btn-tags-sm mb-10 mr-5" href="jobs-grid.html">App</a><a class="btn btn-tags-sm mb-10 mr-5" href="jobs-grid.html">Digital</a>
+                      </div>
+                    </div>
+                    <div class="employers-info align-items-center justify-content-center mt-15">
+                      <div class="row">
+                        <div class="col-6"><span class="d-flex align-items-center"><i class="fi-rr-marker mr-5 ml-0"></i><span class="font-sm color-text-mutted"><a [href]="tool.externalUrl" target="_blank">Visit</a></span></span></div>
+                        <div class="col-6"><span class="d-flex justify-content-end align-items-center"><i class="fi-rr-clock mr-5"></i><span class="font-sm color-brand-1">${{tool.price}}</span></span></div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+  <section class="section-box">
+    <div class="banner-hero hero-2 hero-3">
+      <div class="overlay"></div>
+      <div class="banner-inner">
+        <div class="block-banner">
+          <h1 class="text-42 color-white wow animate__animated animate__fadeInUp">The #1 <span class="color-green">Job Board for</span><br class="d-none d-lg-block">Hiring or Find your next job</h1>
+          <div class="font-lg font-regular color-white mt-20 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">Each month, more than 3 million job seekers turn to website in their search for work, making over 140,000 applications every single day</div>
+          <div class="form-find mt-40 wow animate__animated animate__fadeIn" data-wow-delay=".2s">
+            <form (ngSubmit)="onSearch()">
+              <input (input)="onSearch()" class="form-input input-keysearch mr-10" type="text" placeholder="Your keyword..." [(ngModel)]="keyword" name="keyword">
+              <button type="submit" class="btn btn-default btn-find font-sm">Search</button>
+            </form>
+          </div>
+          <div class="list-tags-banner mt-20 wow animate__animated animate__fadeInUp" data-wow-delay=".3s"><strong style="text-transform: uppercase;">We Have <span style="color: white;">{{listOfAiTools.length}}</span> Result </strong></div>
+        </div>
+      </div>
+      <div class="cr">
+        <p-carousel [value]="listOfAiTools" [numVisible]="5" [circular]="false" [autoplayInterval]="3000">
+          <ng-template let-image pTemplate="item">
+              <div class="content">
+                  <div class="content-inside">
+                    <img [src]="image.image" [alt]="image.alt" width="30" />
+                    <p>{{image.titleAr}}</p>
+                    <p>{{image.description}}</p>
+                  </div>
+              </div>
+          </ng-template>
+      </p-carousel>
+      </div>
+
+    </div>
+  </section>
