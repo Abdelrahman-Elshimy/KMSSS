@@ -1,1 +1,65 @@
-<p>register works!</p>
+<p-toast />
+
+<section class="pt-30 login-register">
+  <div class="container">
+    <div class="row login-register-cover">
+      <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+        <div class="text-center">
+          <p class="font-sm text-brand-2">Register </p>
+          <h2 class="mt-10 mb-5 text-brand-1">Start for free Today</h2>
+          <p class="font-sm text-muted mb-30">Access to all features. No credit card required.</p>
+        </div>
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="login-register text-start mt-20">
+          <div class="form-group">
+            <label class="form-label" for="input-1">First Name *</label>
+            <input formControlName="firstName" id="input-1" type="text" class="form-control">
+            <div *ngIf="registrationForm.get('firstName')?.invalid && registrationForm.get('firstName')?.touched" class="text-danger">
+              Full Name is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="input-1">Last Name *</label>
+            <input formControlName="lastName" id="input-1" type="text" class="form-control">
+            <div *ngIf="registrationForm.get('lastName')?.invalid && registrationForm.get('lastName')?.touched" class="text-danger">
+              Full Name is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="input-2">Email *</label>
+            <input formControlName="email" id="input-2" type="email" class="form-control">
+            <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched" class="text-danger">
+              Email is required and must be a valid email address
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="input-3">Username *</label>
+            <input formControlName="username" id="input-3" type="text" class="form-control">
+            <div *ngIf="registrationForm.get('username')?.invalid && registrationForm.get('username')?.touched" class="text-danger">
+              Username is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="input-4">Password *</label>
+            <input formControlName="password" id="input-4" type="password" class="form-control">
+            <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched" class="text-danger">
+              Password is required and must be at least 6 characters long
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="input-5">Re-Password *</label>
+            <input formControlName="confirmPassword" id="input-5" type="password" class="form-control">
+            <div *ngIf="registrationForm.hasError('passwordMismatch') && registrationForm.get('confirmPassword')?.touched" class="text-danger">
+              Passwords must match
+            </div>
+          </div>
+          <div class="form-group">
+            <button [disabled]="registrationForm.invalid" class="btn btn-brand-1 hover-up w-100" type="submit" name="login">Submit &amp; Register</button>
+          </div>
+          <div class="text-muted text-center">Already have an account? <a href="page-signin.html">Sign in</a></div>
+        </form>
+      </div>
+      <div class="img-1 d-none d-lg-block"><img class="shape-1" src="assets/imgs/page/login-register/img-1.svg" alt="JobBox"></div>
+      <div class="img-2"><img src="assets/imgs/page/login-register/img-2.svg" alt="JobBox"></div>
+    </div>
+  </div>
+</section>

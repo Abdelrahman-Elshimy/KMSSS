@@ -2,14 +2,14 @@
   <div class="container">
     <div class="main-header">
       <div class="header-left">
-        <div class="header-logo"><a class="d-flex" routerLink="/home"><img alt="jobBox" src="assets/imgs/template/jobhub-logo.svg"></a></div>
+        <div class="header-logo"><a class="d-flex" routerLink=""><img alt="jobBox" src="assets/imgs/template/jobhub-logo.svg"></a></div>
       </div>
       <div class="header-nav">
         <nav class="nav-main-menu">
           <ul class="main-menu">
-            <li class="has-children"><a class="active" routerLink="/home">Home</a>
+            <li class="has-children"><a class="active" routerLink="">Home</a>
               <ul class="sub-menu">
-                <li><a routerLink="/home">Home 1</a></li>
+                <li><a routerLink="">Home 1</a></li>
                 <li><a href="index-2.html">Home 2</a></li>
                 <li><a href="index-3.html">Home 3</a></li>
                 <li><a href="index-4.html">Home 4</a></li>
@@ -43,7 +43,7 @@
                 <li><a href="page-about.html">About Us</a></li>
                 <li><a href="page-pricing.html">Pricing Plan</a></li>
                 <li><a href="page-contact.html">Contact Us</a></li>
-                <li><a href="page-register.html">Register</a></li>
+                <li><a routerLink="/register">Register</a></li>
                 <li><a routerLink="/login">Signin</a></li>
                 <li><a href="page-reset-password.html">Reset Password</a></li>
                 <li><a href="page-content-protected.html">Content Protected</a></li>
@@ -57,13 +57,24 @@
                 <li><a href="blog-details.html">Blog Single</a></li>
               </ul>
             </li>
+
           </ul>
         </nav>
         <div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
       </div>
       <div class="header-right">
-        <div class="block-signin"><a class="text-link-bd-btom hover-up" href="page-register.html">Register</a><a class="btn btn-default btn-shadow ml-40 hover-up" routerLink="/login">Sign in</a></div>
+        <ul  *ngIf="userSession" class="main-menu">
+          <li class="has-children"><a>Account</a>
+            <ul class="sub-menu">
+              <li><a style="text-align: left;">Account</a></li>
+              <li><a style="text-align: left;" (click)="logout()">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div *ngIf="!userSession" class="block-signin"><a class="text-link-bd-btom hover-up" routerLink="/register">Register</a><a class="btn btn-default btn-shadow ml-40 hover-up" routerLink="/login">Sign in</a></div>
       </div>
+
     </div>
   </div>
 </header>
@@ -115,8 +126,8 @@
                   <li><a href="page-about.html">About Us</a></li>
                   <li><a href="page-pricing.html">Pricing Plan</a></li>
                   <li><a href="page-contact.html">Contact Us</a></li>
-                  <li><a href="page-register.html">Register</a></li>
-                  <li><a href="page-signin.html">Signin</a></li>
+                  <li><a routerLink="/register">Register</a></li>
+                  <li><a routerLink="/login">Signin</a></li>
                   <li><a href="page-reset-password.html">Reset Password</a></li>
                   <li><a href="page-content-protected.html">Content Protected</a></li>
                   <li><a href="page-404.html">404 Error</a></li>
@@ -196,8 +207,8 @@
                   <li><a href="page-about.html">About Us</a></li>
                   <li><a href="page-pricing.html">Pricing Plan</a></li>
                   <li><a href="page-contact.html">Contact Us</a></li>
-                  <li><a href="page-register.html">Register</a></li>
-                  <li><a href="page-signin.html">Signin</a></li>
+                  <li><a routerLink="/register">Register</a></li>
+                  <li><a routerLink="/login">Signin</a></li>
                   <li><a href="page-reset-password.html">Reset Password</a></li>
                   <li><a href="page-content-protected.html">Content Protected</a></li>
                   <li><a href="page-404.html">404 Error</a></li>

@@ -28,13 +28,22 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
-      this.apiService.login(username, password).subscribe((response: any) => {
+      this.apiService.loginByUsername(username, password).subscribe((response: any) => {
         if (response.result && Array.isArray(response.result) && response.result.length > 0) {
           console.log(response.result);
           this.userSessionService.setUser(response.result[0]);
-          this.router.navigate(['/home']);
+          this.router.navigate(['']);
         } else {
-          this.messageService.add({ severity: 'error', summary: 'Login Failed', detail: 'Please check your username and password.' });
+          this.apiService.loginByEmail(username, password).subscribe((response: any) => {
+            if (response.result && Array.isArray(response.result) && response.result.length > 0) {
+              console.log(response.result);
+              this.userSessionService.setUser(response.result[0]);
+              this.router.navigate(['']);
+            } else {
+              this.messageService.add({ severity: 'error', summary: 'Login Failed', detail: 'Please check your username or email and password.' });
+
+            }
+          });
         }
       }, error => {
         console.error('An error occurred during login:', error);

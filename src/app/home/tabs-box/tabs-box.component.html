@@ -31,7 +31,8 @@
                   <div class="card-block-info">
                     <p class="font-xs color-text-paragraph-2">{{ tool.bodyEn[0].children[0].text }}</p>
                     <div class="card-2-bottom card-2-bottom-candidate mt-30">
-                      <div class="text-start"><a class="btn btn-tags-sm mb-10 mr-5" href="jobs-grid.html">Figma</a><a class="btn btn-tags-sm mb-10 mr-5" href="jobs-grid.html">Adobe XD</a><a class="btn btn-tags-sm mb-10 mr-5" href="jobs-grid.html">PSD</a><a class="btn btn-tags-sm mb-10 mr-5" href="jobs-grid.html">App</a><a class="btn btn-tags-sm mb-10 mr-5" href="jobs-grid.html">Digital</a>
+                      <div class="text-start">
+                        <a *ngFor="let tag of tool.tags" class="btn btn-tags-sm mb-10 mr-5">{{tag.titleEn}}</a>
                       </div>
                     </div>
                     <div class="employers-info align-items-center justify-content-center mt-15">
