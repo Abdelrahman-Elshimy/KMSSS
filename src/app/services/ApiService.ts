@@ -40,7 +40,7 @@ export class ApiService {
 
 
   fetchAllCategories(){
-    const query = `*[_type == 'category'] {_id,titleAr,titleEn,'imageUrl': image._upload.previewImage, 'tools': *[_type == 'AITool' && references(^._id)]{title, titleAr, 'imageUrl':mainImage.asset->url, bodyAr, bodyEn,price,externalUrl}}`;
+    const query = `*[_type == 'category'] {_id,titleAr,titleEn,'imageUrl': image.asset->url, 'tools': *[_type == 'AITool' && references(^._id)]{title, titleAr, 'imageUrl':mainImage.asset->url, bodyAr, bodyEn,price,externalUrl}}`;
     return this.post<any>(this.apiUrl, { query: query });
 
   }
